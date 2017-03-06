@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script src="https://as.alipayobjects.com/g/component/antbridge/1.1.1/antbridge.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			
+			var $host="",$queryParam="",$url="",$flag="";			
+			$queryParam=window.location.search;	
+			$host= $$url+"/lakalaAliPay";							
+			$url=$host+$queryParam;		 	
+			$flag=$url.indexOf("&sign=null");		 	
+			if($flag){		 	
+				$url=$url.substr(0,$flag)		 	
+			}else{		 		
+				$url=$url		 	
+			};
+											
+			function jsApiCall() {
+				
+				$.get($url, function(json) {
+
+					if (json.code == 200) {
+						AlipayJSBridge.call("tradePay",{
+							tradeNO:  json.tradeNO
+						},function(result){
+							
+							window.location.href ="scanS.html" + $queryParam;
+
+						})
+					}
+					else{						
+						AlipayJSBridge.call("closeWebview");
+					}
+					
+				});
+
+
+			};
+
+			jsApiCall();
+
+			});
+
+	</script>
+</head>
+<body>
+		
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<title>易趴</title>
+	<link rel="stylesheet" href="css/work3.css"/>
+	<link rel="stylesheet" href="css/layer.css"/>	
+</head>
+<body ontouchstart>
+	<div class="weui-header weui-header2"> 
+		<div class="weui-header-left"><a href="javascript:history.back()" style="display:none"><i class="icon-x icon-x10"></i></a></div>
+		<h1 class="weui-header-title">易趴支付</h1>
+	</div>	
+	<div class="page pay-page bg-gray">
+		<div class="bg-white">
+			<div class="dinner-name"></div>
+			<div class="plr12">
+				<div class="input-box">
+					<span class="dot">¥</span>
+					<div class="input-inner-box">
+						<div id="inputPrice" class="price-text"><span class='cursor'></span><span class="placeholder">咨询服务员实际消费金额并输入...</span></div>
+						<input type="hidden" id="hid-value">
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="keyboard-box">
+		<div class="remark">- 由易趴科技提供技术支持 -</div>
+		<div class="keyboard">
+			<div class="keyboard-inner-box">
+				<div class="list">
+					<span class="number">1</span>
+					<span class="number">2</span>
+					<span class="number">3</span>
+				</div>
+				<div class="list">
+					<span class="number">4</span>
+					<span class="number">5</span>
+					<span class="number">6</span>
+				</div>
+				<div class="list">
+					<span class="number">7</span>
+					<span class="number">8</span>
+					<span class="number">9</span>
+				</div>
+				<div class="list">
+					<span class="number">.</span>
+					<span class="number">0</span>
+					<span id="minus" class="number error"><span class="dc-icon dc-icon-remove"></span></span>
+				</div>
+			</div>
+			<div class="keyboard-confirm" id="keyboard-confirm"><div>确定支付</div></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>       
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/orderOnLinePay.js"></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+</body>
+</html>
